@@ -71,54 +71,54 @@ function App() {
                             </h5>
                             <ul className="my-4 space-y-3">
                                 <li>
-                                    <a href="#" className="flex items-center p-3 text-base text-gray-900 bg-white bg-opacity-50 rounded-lg hover:bg-opacity-60 group">
+                                    <div className="flex items-center p-3 text-base text-gray-900 bg-white bg-opacity-50 rounded-lg hover:bg-opacity-60 group">
                                         <span className="flex-1 ml-3 whitespace-nowrap">
                                             <span>description: </span>
                                             <span>{item.weather[0].description} </span>
                                         </span>
-                                    </a>
+                                    </div>
                                 </li>
                                 <li>
-                                    <a href="#" className="flex items-center p-3 text-base text-gray-900 bg-white bg-opacity-50 rounded-lg hover:bg-opacity-60 group">
+                                    <adiv className="flex items-center p-3 text-base text-gray-900 bg-white bg-opacity-50 rounded-lg hover:bg-opacity-60 group">
                                         <p className="flex-1 ml-3 whitespace-nowrap">
                                             <span>Temp: </span>
                                             <span dir="ltr" className="inline-block">
                                                 {item.main.temp}
                                             </span>
                                         </p>
-                                    </a>
+                                    </adiv>
                                 </li>
                                 <li>
-                                    <a href="#" className="flex items-center p-3 text-base text-gray-900 bg-white bg-opacity-50 rounded-lg hover:bg-opacity-60 group">
+                                    <adiv className="flex items-center p-3 text-base text-gray-900 bg-white bg-opacity-50 rounded-lg hover:bg-opacity-60 group">
                                         <span className="flex-1 ml-3 whitespace-nowrap">
                                             <span>Humidity: </span>
                                             <span>{item.main.humidity}</span>
                                         </span>
-                                    </a>
+                                    </adiv>
                                 </li>
                                 <li>
-                                    <a href="#" className="flex items-center p-3 text-base text-gray-900 bg-white bg-opacity-50 rounded-lg hover:bg-opacity-60 group">
+                                    <adiv className="flex items-center p-3 text-base text-gray-900 bg-white bg-opacity-50 rounded-lg hover:bg-opacity-60 group">
                                         <span className="flex-1 ml-3 whitespace-nowrap">
                                             <span> Wind: </span>
                                             <span>{item.wind.speed}</span>
                                         </span>
-                                    </a>
+                                    </adiv>
                                 </li>
                                 <li>
-                                    <a href="#" className="flex items-center p-3 text-base text-gray-900 bg-white bg-opacity-50 rounded-lg hover:bg-opacity-60 group">
+                                    <adiv className="flex items-center p-3 text-base text-gray-900 bg-white bg-opacity-50 rounded-lg hover:bg-opacity-60 group">
                                         <span className="flex-1 ml-3 whitespace-nowrap">
                                             <span>sunrise: </span>
                                             <span>{timeConvert(item.sys.sunrise)}</span>
                                         </span>
-                                    </a>
+                                    </adiv>
                                 </li>
                                 <li>
-                                    <a href="#" className="flex items-center p-3 text-base text-gray-900 bg-white bg-opacity-50 rounded-lg hover:bg-opacity-60 group">
+                                    <adiv className="flex items-center p-3 text-base text-gray-900 bg-white bg-opacity-50 rounded-lg hover:bg-opacity-60 group">
                                         <span className="flex-1 ml-3 whitespace-nowrap">
                                             <span>sunset: </span>
                                             <span>{timeConvert(item.sys.sunset)}</span>
                                         </span>
-                                    </a>
+                                    </adiv>
                                 </li>
                             </ul>
                         </div>
