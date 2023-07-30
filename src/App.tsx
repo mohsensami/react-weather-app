@@ -67,7 +67,14 @@ function App() {
             {result.list
               .filter((elm, index: number) => dayIndices.includes(index))
               .map((item: any) => (
-                <p>{item.dt_txt}</p>
+                <>
+                  <p>{item.dt_txt}</p>
+                  <div>
+                    <img
+                      src={`http://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
+                    />
+                  </div>
+                </>
               ))}
           </div>
         )
