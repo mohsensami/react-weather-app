@@ -1,4 +1,4 @@
-const timeConvert = (uix: number) => {
+export const timeConvert = (uix: number) => {
   let unix_timestamp = uix;
   var date = new Date(unix_timestamp * 1000);
   var hours = date.getHours();
@@ -9,4 +9,7 @@ const timeConvert = (uix: number) => {
   return formattedTime;
 };
 
-export default timeConvert;
+export function kelvinToCelsius(kelvin: number) {
+  const celsius = kelvin - 273.15;
+  return celsius;
+}

@@ -1,7 +1,7 @@
 import "./style.css";
 
-const Loading = () => {
+const Spinner = () => {
   return <div className="loader  h-[90vh]"></div>;
 };
 
-export default Loading;
+export default Spinner;
