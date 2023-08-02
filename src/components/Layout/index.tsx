@@ -1,9 +1,11 @@
+import './style.css';
+
 const Layout = (props: any) => {
-  return (
-    <div>
-      <div>{props.children}</div>
-    </div>
-  );
+    return (
+        <div id="layout">
+            <div>{props.children}</div>
+        </div>
+    );
 };
 
 export default Layout;
