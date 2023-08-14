@@ -44,10 +44,13 @@ function App() {
     };
     return (
         <Layout>
-            <form onSubmit={handleSubmit}>
-                <input value={input} onChange={(e) => setInput(e.target.value)} type="text" />
-                <input disabled={!input} type="submit" value="Send" />
-            </form>
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <h1>SEARCH FOR LATEST WEATHER UPDATES</h1>
+                    <input value={input} onChange={(e) => setInput(e.target.value)} type="text" />
+                    <input disabled={!input} type="submit" value="Send" />
+                </form>
+            </div>
             {isLoading ? (
                 <Spinner />
             ) : (
