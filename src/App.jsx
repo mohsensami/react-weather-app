@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route, Link } from 'react-router-dom';
+import MainContainer from './components/container/mainContainer';
+import Home from './components/pages/Home';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+export default function App() {
+    return (
+        <div>
+            <Routes>
+                <Route path="/" element={<MainContainer />}>
+                    <Route index element={<Home />} />
+                    <Route path="about" element={<About />} />
+                    <Route path="dashboard" element={<Dashboard />} />
+                    <Route path="*" element={<NoMatch />} />
+                </Route>
+            </Routes>
+        </div>
+    );
 }
 
-export default App
+function About() {
+    return (
+        <div>
+            <h2>About</h2>
+        </div>
+    );
+}
+
+function Dashboard() {
+    return (
+        <div>
+            <h2>Dashboard</h2>
+        </div>
+    );
+}
+
+function NoMatch() {
+    return (
+        <div>
+            <h2>Nothing to see here!</h2>
+            <p>
+                <Link to="/">Go to the home page</Link>
+            </p>
+        </div>
+    );
+}
