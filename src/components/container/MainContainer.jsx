@@ -3,7 +3,7 @@ import Header from '../layouts/Header';
 
 export default function MainContainer() {
     return (
-        <div>
+        <div className="flex flex-col h-screen">
             <Header />
             <Outlet />
         </div>

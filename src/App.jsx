@@ -2,17 +2,22 @@ import { Routes, Route, Link } from 'react-router-dom';
 import MainContainer from './components/container/mainContainer';
 import Home from './components/pages/Home';
 
+// Providers
+import { WeatherProvider } from './context/weatherContext';
+
 export default function App() {
     return (
         <div>
-            <Routes>
-                <Route path="/" element={<MainContainer />}>
-                    <Route index element={<Home />} />
-                    <Route path="about" element={<About />} />
-                    <Route path="dashboard" element={<Dashboard />} />
-                    <Route path="*" element={<NoMatch />} />
-                </Route>
-            </Routes>
+            <WeatherProvider>
+                <Routes>
+                    <Route path="/" element={<MainContainer />}>
+                        <Route index element={<Home />} />
+                        <Route path="about" element={<About />} />
+                        <Route path="dashboard" element={<Dashboard />} />
+                        <Route path="*" element={<NoMatch />} />
+                    </Route>
+                </Routes>
+            </WeatherProvider>
         </div>
     );
 }
