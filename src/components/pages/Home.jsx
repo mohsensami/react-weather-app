@@ -26,6 +26,11 @@ const Home = () => {
         [dispatch, userForm.city]
     );
 
+    // If there is no error and the weather for submited city exists then redirect to Weather.js
+    if (!weather.error && weather.weather) {
+        window.location.assign(`/weather/${userForm.city}/${weather.weather.coord.lon}&${weather.weather.coord.lat}`);
+    }
+
     return (
         <div className="h-screen flex flex-col justify-center items-center bg-gray-800 gap-8">
             {JSON.stringify(weather)}

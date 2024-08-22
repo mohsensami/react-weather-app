@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import MainContainer from './components/container/mainContainer';
 import Home from './components/pages/Home';
+import Weather from './components/pages/Weather';
 
 // Providers
 import { WeatherProvider } from './context/weatherContext';
@@ -12,6 +13,8 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<MainContainer />}>
                         <Route index element={<Home />} />
+                        <Route exact path="weather/:city/:coord" component={<Weather />} />
+                        <Route path="weather" element={<Weather />} />
                         <Route path="about" element={<About />} />
                         <Route path="dashboard" element={<Dashboard />} />
                         <Route path="*" element={<NoMatch />} />
