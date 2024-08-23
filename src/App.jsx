@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import MainContainer from './components/container/mainContainer';
 import Home from './components/pages/Home';
 import Weather from './components/pages/Weather';
@@ -10,44 +10,46 @@ export default function App() {
     return (
         <div>
             <WeatherProvider>
-                <Routes>
-                    <Route path="/" element={<MainContainer />}>
-                        <Route index element={<Home />} />
-                        <Route exact path="weather/:city/:coord" component={<Weather />} />
-                        <Route path="weather" element={<Weather />} />
-                        <Route path="about" element={<About />} />
-                        <Route path="dashboard" element={<Dashboard />} />
-                        <Route path="*" element={<NoMatch />} />
-                    </Route>
-                </Routes>
+                <BrowserRouter>
+                    <MainContainer>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            {/* <Route exact path="/weather/:city/:coord" component={<Weather />} /> */}
+                            <Route path="weather" element={<Weather />} />
+                            {/* <Route path="about" element={<About />} />
+                            <Route path="dashboard" element={<Dashboard />} />
+                            <Route path="*" element={<NoMatch />} /> */}
+                        </Routes>
+                    </MainContainer>
+                </BrowserRouter>
             </WeatherProvider>
         </div>
     );
 }
 
-function About() {
-    return (
-        <div>
-            <h2>About</h2>
-        </div>
-    );
-}
+// function About() {
+//     return (
+//         <div>
+//             <h2>About</h2>
+//         </div>
+//     );
+// }
 
-function Dashboard() {
-    return (
-        <div>
-            <h2>Dashboard</h2>
-        </div>
-    );
-}
+// function Dashboard() {
+//     return (
+//         <div>
+//             <h2>Dashboard</h2>
+//         </div>
+//     );
+// }
 
-function NoMatch() {
-    return (
-        <div>
-            <h2>Nothing to see here!</h2>
-            <p>
-                <Link to="/">Go to the home page</Link>
-            </p>
-        </div>
-    );
-}
+// function NoMatch() {
+//     return (
+//         <div>
+//             <h2>Nothing to see here!</h2>
+//             <p>
+//                 <Link to="/">Go to the home page</Link>
+//             </p>
+//         </div>
+//     );
+// }
