@@ -2,6 +2,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import MainContainer from './components/container/mainContainer';
 import Home from './components/pages/Home';
 import Weather from './components/pages/Weather';
+import { FullWeatherProvider } from './context/fullWeatherContext';
 
 // Providers
 import { WeatherProvider } from './context/weatherContext';
@@ -10,18 +11,20 @@ export default function App() {
     return (
         <div>
             <WeatherProvider>
-                <BrowserRouter>
-                    <MainContainer>
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            {/* <Route exact path="/weather/:city/:coord" component={<Weather />} /> */}
-                            <Route path="weather" element={<Weather />} />
-                            {/* <Route path="about" element={<About />} />
+                <FullWeatherProvider>
+                    <BrowserRouter>
+                        <MainContainer>
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                                {/* <Route exact path="/weather/:city/:coord" component={<Weather />} /> */}
+                                <Route path="weather" element={<Weather />} />
+                                {/* <Route path="about" element={<About />} />
                             <Route path="dashboard" element={<Dashboard />} />
                             <Route path="*" element={<NoMatch />} /> */}
-                        </Routes>
-                    </MainContainer>
-                </BrowserRouter>
+                            </Routes>
+                        </MainContainer>
+                    </BrowserRouter>
+                </FullWeatherProvider>
             </WeatherProvider>
         </div>
     );
