@@ -1,15 +1,9 @@
-import Header from './components/Header';
-import Main from './components/Main';
-import './styles/components/App.scss';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import TopButtons from './components/TopButtons';
 
 function App() {
-    const dark = true;
-
     return (
-        <div className={`App-${dark ? 'dark' : 'light'}`}>
-            <Header />
-            <Main />
+        <div className="mx-auto max-w-screen-md mt-4 py-5 px-32 bg-gradient-to-br  h-fit shadow-xl shadow-gray-400">
+            <TopButtons />
         </div>
     );
 }
