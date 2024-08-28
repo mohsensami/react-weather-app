@@ -1,4 +1,5 @@
 import Inputs from './components/Inputs';
+import TimeAndLocation from './components/TimeAndLocation';
 import TopButtons from './components/TopButtons';
 
 function App() {
@@ -8,6 +9,9 @@ function App() {
             <Inputs
             //  setQuery={setQuery} units={units} setUnits={setUnits}
             />
+            <TimeAndLocation
+            // weather={weather}
+             />
         </div>
     );
 }
